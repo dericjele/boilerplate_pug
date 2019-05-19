@@ -1,0 +1,34 @@
+
+// function for media query breakpoints
+media_queries = {
+  xs_mobile : "only screen and (max-width: 320px)",
+  mobile  : "only screen and (max-width: 824px)",
+  //mobile  : "only screen and (min-width: 768px) and (max-width: 824px)",
+  tablet  : "only screen and (min-width: 824px) and (max-width: 1024px)",
+  desktop : "only screen and (min-width: 1025px)",
+  desktop_plus : "only screen and (min-width: 1200px)"
+}
+
+
+for_breakpoint(breakpoints)
+  conditions = ()
+  for breakpoint in breakpoints
+    push(conditions, media_queries[breakpoint])
+  conditions = join(", ", conditions)
+  @media conditions
+    {block}
+
+// variables
+font_grey--two = #555555
+font_grey--one = #333333
+font_blue = #3e8fcd
+
+/*@font-face {
+  font-family: "Aliquam";
+  src: url("../fonts/AliquamREG.ttf") format("opentype");
+}*/
+
+body
+  font-family "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif
+  background-color grey
+  font-size 14px;

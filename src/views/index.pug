@@ -1,0 +1,13 @@
+doctype html
+html(lang="en-CA")
+    head
+        title= site.title
+
+        - var charset = site.meta.charset
+        meta(charset=charset)
+    body
+        h1 Pug is Awesome !
+        ul.nav
+            each link in nav.links
+                li= link.displayName
+        h1= translations.HELLO_WORLD['en-CA']

@@ -1,0 +1,40 @@
+
+{
+  "site": {
+    "title": "This is a Pug Project",
+    "titleJade": "This is a Jade Project",
+    "author": "Tushar Ghate",
+    "meta": {
+      "charset": "utf8",
+      "description": "Lorem ipsum dolor sit amit.",
+      "keywords": "lorem, ipsum, dolor, sit, amit",
+      "favicon": "favicon.ico"
+    }
+  },
+
+  "nav": {
+    "links": [
+      {
+        "href": "/link1",
+        "displayName": "Link One"
+      },
+
+      {
+        "href": "/link2",
+        "displayName": "Link 2"
+      },
+
+      {
+        "href": "/link3",
+        "displayName": "Link 3"
+      }
+    ]
+  },
+
+  "translations": {
+    "HELLO_WORLD": {
+      "en-CA": "Hello World",
+      "fr-CA": "Bonjour le monde"
+    }
+  }
+}
