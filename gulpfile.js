@@ -7,23 +7,26 @@ const data = require('gulp-data');
 const minify = require('gulp-minify');
 const fs = require('fs');
 const browserSync = require('browser-sync').create();
+const plumber = require('gulp-plumber');
 
 
 gulp.task('pug', function() {
-   return gulp.src('./src/views/*.pug')
-       .pipe(data(function(file) {
-          return JSON.parse(fs.readFileSync('./src/locals/en.json'))
-       }))
-       .pipe(pug({
-           doctype: 'html',
-           pretty: true
-       }))
-       .pipe(gulp.dest('build/'))
+    return gulp.src('./src/views/*.pug')
+        .pipe(plumber())
+        .pipe(data(function(file) {
+            return JSON.parse(fs.readFileSync('./src/locals/en.json'))
+        }))
+        .pipe(pug({
+            doctype: 'html',
+            pretty: true
+        }))
+        .pipe(gulp.dest('build/'))
 });
 
 // Get one .styl file and render
 gulp.task('stylus', function () {
     return gulp.src('./src/styles/*.styl')
+        .pipe(plumber())
         .pipe(stylus())
         .pipe(gulp.dest('build/css/'))
 
