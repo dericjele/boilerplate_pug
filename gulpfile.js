@@ -33,9 +33,9 @@ gulp.task('stylus', function () {
 });
 
 gulp.task('imagemin', () =>
-    gulp.src('src/images/*')
+    gulp.src('src/img/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('build/images/'))
+        .pipe(gulp.dest('build/img/'))
 );
 
 gulp.task('minify', function() {
